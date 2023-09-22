@@ -1,8 +1,9 @@
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineDollar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
-    const { logo, job_title, company_name, remote_or_onsite, location, salary, job_type } = job;
+    const { id, logo, job_title, company_name, remote_or_onsite, location, salary, job_type } = job;
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
             <figure><img src={logo} alt="Shoes" /></figure>
@@ -24,9 +25,12 @@ const Job = ({ job }) => {
                     </div>
                 </div>
                 <div className="card-actions justify-start">
+                    <Link to={`/job/${id}`}>
                     <button className="btn btn-primary">View Details</button>
+                    </Link>
                 </div>
             </div>
+
         </div>
     );
 };
